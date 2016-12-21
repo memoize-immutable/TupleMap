@@ -100,5 +100,6 @@ TupleMap.prototype = {
 };
 
 exports.default = TupleMap;
+module.exports = exports['default'];
 
 //# sourceMappingURL=index.js.map
