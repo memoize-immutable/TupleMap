@@ -6,7 +6,8 @@
   "jsnext:main": "index.js",
   "scripts": {
     "lint": "eslint ./index.js ./__tests__",
-    "test": "jest test.js --coverage && npm run lint",
+    "jest": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "test": "npm run jest && npm run lint",
     "clean": "rimraf dist/ && mkdir dist/",
     "build": "npm test && npm run clean && babel index.js --out-file dist/index.js --source-maps"
   },
