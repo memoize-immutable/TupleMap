@@ -14,6 +14,9 @@ function TupleMap(opts) {
 }
 
 TupleMap.prototype = {
+  toString: function toString() {
+    return '[object TupleMap]';
+  },
   _hash: function _hash(tuple) {
     // Speed up hash generation for the folowing pattern:
     // if ( !cache.has(t) ) { cache.set( t, slowFn(t) ); }
@@ -22,7 +25,7 @@ TupleMap.prototype = {
     }
 
     var l = tuple.length;
-    var aKey = [];
+    var hash = [];
 
     for (var i = 0; i < l; i++) {
       var arg = tuple[i];
@@ -32,23 +35,23 @@ TupleMap.prototype = {
       // (typeof null is "object", but should be considered a primitive)
       if (arg !== null && (argType === 'object' || argType === 'function')) {
         if (this._idMap.has(arg)) {
-          aKey.push(this._idMap.get(arg));
+          hash.push(this._idMap.get(arg));
         } else {
           var id = '#' + this._id++;
           this._idMap.set(arg, id);
-          aKey.push(id);
+          hash.push(id);
         }
 
-        // otherwise, add the argument and its type to the aKey
+        // otherwise, add the argument and its type to the hash
       } else {
-        aKey.push(argType === 'string' ? '"' + arg + '"' : '' + arg);
+        hash.push(argType === 'string' ? '"' + arg + '"' : '' + arg);
       }
     }
 
     this._lastTuple = tuple;
     // concatenate serialized arguments using a complex separator
     // (to avoid key collisions)
-    this._lastHash = aKey.join('/<[MI_SEP]>/');
+    this._lastHash = hash.join('/<[MI_SEP]>/');
 
     return this._lastHash;
   },
@@ -59,7 +62,6 @@ TupleMap.prototype = {
   },
 
   set: function set(tuple, value) {
-    var length = tuple.length;
     var hash = this._hash(tuple);
 
     if (this._limit !== undefined) {
