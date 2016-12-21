@@ -1,6 +1,6 @@
 {
   "name": "tuplemap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Map which accepts multiple objects as a key.",
   "main": "dist/index.js",
   "jsnext:main": "index.js",
