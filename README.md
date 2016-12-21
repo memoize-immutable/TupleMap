@@ -1,4 +1,4 @@
-TupleMap [![npm version](https://badge.fury.io/js/tuplemap.svg)](https://badge.fury.io/js/tuplemap) [![Build Status](https://travis-ci.org/memoize-immutable/tuplemap.svg?branch=master)](https://travis-ci.org/memoize-immutable/tuplemap) [![Dependency Status](https://david-dm.org/memoize-immutable/tuplemap.svg)](https://david-dm.org/memoize-immutable/tuplemap) [![Coverage Status](https://coveralls.io/repos/github/memoize-immutable/tuplemap/badge.svg?branch=master)](https://coveralls.io/github/memoize-immutable/tuplemap?branch=master)
+TupleMap [![npm version](https://badge.fury.io/js/tuplemap.svg)](https://badge.fury.io/js/tuplemap) [![Build Status](https://travis-ci.org/memoize-immutable/TupleMap.svg?branch=master)](https://travis-ci.org/memoize-immutable/TupleMap) [![Dependency Status](https://david-dm.org/memoize-immutable/TupleMap.svg)](https://david-dm.org/memoize-immutable/TupleMap) [![Coverage Status](https://coveralls.io/repos/github/memoize-immutable/TupleMap/badge.svg?branch=master)](https://coveralls.io/github/memoize-immutable/TupleMap?branch=master)
 ========
 
 A Map which accepts multiple objects as a key.
